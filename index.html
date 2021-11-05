@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<style>
+#myContainer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#myAnimation {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+<body>
+
+<p>
+<button onclick="myMove()">Click Me</button> 
+</p>
+
+<div id ="myContainer">
+<div id ="myAnimation"></div>
+</div>
+
+<script>
+var id = null;
+var index=0;
+function myMove() {
+
+  var pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 10);
+  
+  function frame() {
+// var elem=document.createElement("BUTTON");	
+var elem = document.createElement("input");
+  elem.type = "button";
+  
+    
+    if (pos >= 650) {
+      clearInterval(id);
+    } else {
+    index++;
+      pos+=20; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+      elem.style.borderColor = "Blue";
+      elem.style.position = "absolute";
+       elem.style.width = "50px";
+      elem.style.backgroundcolor = "georgian";
+      elem.style.height = "50px";
+      elem.value="a"+index;
+      document.body.appendChild(elem);
+    }
+  }
+}
+</script>
+
+</body>
+</html>
